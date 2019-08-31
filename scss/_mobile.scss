@@ -1,0 +1,462 @@
+// (min-width: 1026px) and (max-width: 1425px)
+@include mediaLg {
+  #portfolio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+// (min-width: 768px) and (max-width: 1025px) 
+
+@include mediaMd {
+
+  // Main SCSS
+
+  section.hero-image {
+    height: 80vh;
+  }
+  #main-header {
+    grid-template-areas:
+      "title"
+      "nav";
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    height: 160px;
+
+    ul {
+      margin-top: -60.8px;
+      padding: 20px;
+    }
+  }
+
+  section.gallery-intro { 
+    grid-template-areas:
+    "main"
+    "pic";
+    
+
+    .gallery-section {
+      width: 100%;
+      padding-top: 35px;
+
+      .photo > img {
+        width: 250px;
+        object-fit: cover;
+        object-position: 50%; 
+        align-items: center;
+      }
+    }
+  }
+
+// About SCSS
+
+
+.story {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  .story-desc {
+    width: 75%;
+  }
+}
+
+.profile {
+  display: flex;
+
+  img {
+    z-index: 3;
+    height: 500px;
+    width: 500px;
+  }
+}
+
+.profile-cicle {
+  top: 505px;
+}
+
+
+
+// Gallery SCSS
+
+  
+
+  div.project {
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  #portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid__overlay {
+    display: none;
+  }
+}
+
+
+// (min-width: 420px) and (max-width: 767px) 
+
+@include mediaSmL {  
+
+// Main SCSS 
+
+  section.hero-image {
+    background-position: center;
+    height: 80vh;
+
+    .main-title-caption {
+      justify-content: center;
+      align-content: center;
+    }
+
+    h1 {
+      font-size: 3.4rem;
+    }
+
+    .main-header-btn {
+      width: 120px;
+    }
+  }
+
+
+  #main-header {
+    grid-template-areas:
+      "title"
+      "nav";
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    height: 160px;
+
+    ul {
+      margin-top: -60.8px;
+      padding: 20px;
+    }
+  }
+
+
+  section.quote {
+    background: $primary url("../images/quotation.png") no-repeat center;
+    background-position: 80px 50px;
+    background-size: 150px;
+
+    blockquote {
+      font-family: $big;
+      font-size: 1.5rem;
+      width: 100%;
+      margin: 3px;
+      padding: 10px;
+      
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+section.gallery-intro {
+  grid-template-areas:
+    "main"
+    "pic";
+
+
+  .gallery-section {
+    width: 100%;
+    padding-top: 35px;
+
+    .photo>img {
+      width: 180px;
+      object-fit: cover;
+      object-position: 50%;
+      align-items: center;
+    }
+  }
+}
+
+// About SCSS
+
+.story {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  .story-desc {
+    width: 85%;
+
+    h2 {
+      padding: 0;
+      font-size: 3.2rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.dogs {
+
+  h2 {
+    font-size: 2.3rem;
+    padding: 0;
+  }
+
+  .about-dogs {
+    
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
+
+.profile {
+  display: flex;
+  padding-top: 70px;
+
+  img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+.profile-cicle {
+  top: 545px;
+  width: 350px;
+  height: 350px;
+}
+
+
+// Gallery SCSS 
+
+  #gallery-nav {
+    display: grid;
+    grid-template-areas:
+      "title"
+      "nav";
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    height: 170px;
+
+    ul {
+      margin-top: -45.8px;
+      padding: 20px;
+    }
+
+    .gallery-section {
+        display: none;
+      }
+  }
+
+
+  #gallery-nav > h1 > a:link,
+  a:visited {
+    font-size: 2.5rem;
+
+    &:hover {
+      color: $orange;
+    }
+
+    span {
+      left: 65px;
+      top: -5px;
+    }
+  }
+
+  #gallery-nav > nav {
+    font-size: 1.2rem;
+    height: 150px;
+
+    ul, li {
+      padding: 0;
+    }
+  }
+
+  div.project {
+    p {
+      display: none;
+    }
+  }
+  
+
+  #portfolio {
+    display: grid;
+    height: 190vh;
+    width: 100%;
+    grid-template-columns: repeat(2, 0.5fr);
+  }
+
+  .grid__overlay {
+    display: none;
+  }
+}
+
+
+//(max-width: 419px)
+@include mediaSm  {
+
+// Main SCSS
+
+  section.hero-image {
+    background-position: center;
+    height: 80vh;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .main-header-btn {
+      height: 40px;
+      width: 120px;
+    }
+  }
+
+
+  #main-header {
+    grid-template-areas:
+    "title"
+    "nav";
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    height: 30vh;
+    padding: 0;
+
+    ul {
+      margin-top: -60.8px;
+      padding: 20px;
+    }
+  }
+  
+
+
+  section.quote {
+    background-position: 50px 50px;
+    background-size: 180px;
+
+    blockquote {
+      font-size: 1.9rem;
+      width: 100%;
+      margin: 5px;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+// About SCSS
+
+.story {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  .story-desc {
+    width: 95%;
+
+    h2 {
+      font-size: 3.0rem;
+      text-align: center;
+      padding: 0;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+.profile {
+  display: flex;
+  padding-top: 70px;
+  width: 100%;
+  background-color: $primary;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 87 100.83' width='58' height='50'%3E%3Cpath fill='%23DA6032' fill-opacity='1' d='M56.9,90.46c-4.11,11-15.5,6.79-19.13,2.74s-12.53-10-12.53-10-9.19-5.49-14.42-7-14-10-5.82-18.44,16.73-2.47,27.42-14.07,20.41-4.3,20.41-4.3S63.6,45,57.76,59.68,61,79.46,56.9,90.46Zm5.76-46c4.41,5.09,13.28,4.35,19.81-1.64s8.26-14.94,3.85-20S73,18.4,66.51,24.39,58.25,39.33,62.66,44.42ZM86.9,56c-3.83-5.56-12.68-5.79-19.77-.52s-9.74,14-5.9,19.59S73.9,80.86,81,75.59,90.73,61.56,86.9,56ZM44,32.7C50.52,34.47,57.86,29,60.42,20.56S59.81,3.76,53.33,2,39.5,5.65,36.93,14.13,37.54,30.92,44,32.7ZM17,47.25c6.67,1.05,13.43-5.13,15.11-13.79s-2.36-16.55-9-17.6S9.68,21,8,29.64,10.35,46.2,17,47.25Z'%3E%3C/path%3E%3C/svg%3E");
+
+  img {
+    height: 250px;
+    width: 350px;
+  }
+}
+
+.profile-cicle {
+  display: none;
+}
+
+.dogs {
+
+  h2 {
+    font-size: 1.8rem;
+    padding: 0;
+  }
+
+  .about-dogs {
+
+    img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
+
+
+// Gallery SCSS
+  section.gallery-intro {
+    grid-area: 1/-1;
+    padding: 0;
+
+    .gallery-btn {
+      top: 370px;
+    }
+
+      .gallery-section {
+        display: none;
+      }
+  }
+  
+
+  #gallery-nav {
+    grid-template-areas:
+    "title"
+    "nav";
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+
+    ul {
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: -75.083px;
+    }
+  }
+
+  div.project {
+    p {
+      display: none;
+    }
+  }
+
+
+  #portfolio {
+    display: grid;
+    height: 150vh;
+    grid-template-columns: repeat(2, 0.5fr);
+  }
+
+  .grid__overlay {
+    display: none;
+  }
+}

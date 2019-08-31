@@ -1,0 +1,239 @@
+
+* {
+  text-decoration: none;
+}
+
+
+
+// header
+
+#gallery-header {
+  text-align: center;
+  font-family: $title;
+  font-size: 2rem;
+}
+
+
+// Gallery Nav
+
+#gallery-nav {
+  display: grid;
+  justify-content: space-between;
+  grid-template-areas:
+    "title nav";
+  background: $yellow;
+  padding: 0 20px;
+  top: 0;
+  width: 100%;
+  transition: top 0.35s;
+  z-index: 2;
+}
+
+#gallery-nav > h1 > a:link,
+a:visited {
+  text-align: left;
+  grid-area: title;
+  font-family: $title;
+  font-size: 2.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: $dark;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $orange;
+  }
+
+  span {
+    font-family: $usual;
+    font-size: 1.2rem;
+    display: block;
+    position: relative;
+    left: 65px;
+    top: -15px;
+    color: $dark;
+  }
+}
+
+#gallery-nav > nav {
+  grid-area: nav;
+  font-family: $usual;
+  font-size: 1.2rem;
+
+  ul > li {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+
+    a:link,
+    :visited {
+      text-decoration: none;
+      color: $orange;
+      box-shadow: 0px -1.7px 0px 0px rgb(218, 96, 50) inset;
+      transition: box-shadow 180ms ease-in-out;
+
+      &:hover {
+        box-shadow: 0px -60px 0px 0px rgb(146, 200, 146) inset;
+        color: $orange;
+      }
+    }
+  }
+}
+
+// Gallery Photos
+
+#portfolio {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  padding: 3px;
+  background: $white;
+  grid-template-columns: repeat(4, minmax(350px, 1fr));
+  grid-gap: 3px;
+  grid-auto-flow: dense;
+  overflow: hidden;
+}
+
+.project {
+  position: relative;
+  background: $primary;  
+
+    img {
+      position: absolute;
+      width: 100%;
+    }
+
+    p {
+      position: absolute;
+      bottom: -20px;
+      text-align: center;
+      width: 100%;
+      padding: 1em 0;
+      font-weight: bold;
+      font-size: 1.25em;
+      letter-spacing: 2px;
+      z-index: 3;
+      color: $white;
+      font-family: $normal;
+      z-index: 0;
+      text-shadow: 2px 1px 2px $dark;
+    }
+}
+
+// project hover overlay
+.project:hover .grid__overlay {
+  transform: translateY(0%);
+}
+
+.grid__overlay {
+  background: rgba(darken($primary, 10%), .9);
+  height: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  transform: translateY(101%);
+  transition: $ease;
+
+  button {
+    background: none;
+    outline: none;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: 1px solid $white;
+    color: $white;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    
+
+    &:hover {
+      transition: $ease;
+      background: $white;
+      color: $secondary;
+      transform: scale(1.05);
+    }
+    
+  }
+}
+
+
+
+//project popup overlay
+
+.overlay {
+  position: fixed;
+  background: rgba($dark, 0.7);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 3;
+}
+
+.overlay.open {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.overlay__inner {
+  background: $white;
+  width: 800px;
+  height: 600px;
+  padding: 20px 30px;
+  position: relative;
+  opacity: 1;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  background: none;
+  outline: 0;
+  color: $dark;
+  border: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.project__image {
+  height: 100%;
+  //  margin-left: -50%;
+}
+
+/* ~~~ Fancy Box Plugin ~~~ */
+
+
+
+// Copyright
+.fancybox-slide.watermark .fancybox-spaceball {
+  background-image: url('https://fancyapps.com/GJbkSPU.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+// Caption within Modals
+.fancybox-caption__body {
+  font-family: $big;
+  font-size: 2rem;
+  text-shadow: 3px 2px $dark;
+}

@@ -1,0 +1,323 @@
+@import 'config';
+@import 'gallery';
+@import 'about';
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: $dark;
+}
+
+
+// header & Nav
+
+
+#main-header {
+  display: grid;
+  justify-content: space-between;
+  grid-template-areas:
+    "title nav";
+  background: $yellow;
+  padding: 0 20px;
+  position: fixed;
+  top: -600px;
+  width: 100%;
+  transition: top 0.35s;
+  z-index: 3;
+}
+
+#main-header > h1 > a:link,
+a:visited {
+  text-align: left;
+  grid-area: title;
+  font-family: $title;
+  font-size: 2.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: $dark;
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $orange;
+  }
+
+  span {
+    font-family: $usual;
+    font-size: 1.2rem;
+    display: block;
+    position: relative;
+    left: 65px;
+    top: -15px;
+    color: $dark;
+  }
+}
+
+#main-header > nav {
+  grid-area: nav;
+  font-family: $usual;
+  font-size: 1.2rem;
+
+  ul > li {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+
+    a:link,
+    :visited {
+      text-decoration: none;
+      color: $orange;
+      box-shadow: 0px -1.7px 0px 0px $orange inset;
+      transition: box-shadow 180ms ease-in-out;
+
+      &:hover {
+        box-shadow: 0px -60px 0px 0px $green inset;
+        color: $white;
+      }
+    }
+  }
+}
+
+
+
+
+// Hero-Image
+
+section.hero-image {
+  background: url('../images/hero.jpg') center/cover no-repeat fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  .main-title-caption {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    align-content: center;
+  }
+
+  h1 {
+    /* justify-content: center;
+    align-self: center;
+    position: absolute;
+    top: 100px;
+    left: 20px; */
+    text-align: left;
+    font-size: 4rem;
+    font-family: 'Kaushan Script', cursive;
+    color: $white;
+  }
+
+  .main-header-btn {
+    margin: 10px;
+    display: block;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 0;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    z-index: 3;
+    text-decoration: none;
+    background: $orange;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:hover,
+    active {
+      color: $dark;
+      background: #fff;
+    }
+  }
+}
+
+
+// Quote Section
+section.quote {
+  display: grid;
+  background: $primary url("../images/quotation.png") no-repeat center;
+  background-position: 150px 50px;
+  background-size: 250px;
+  line-height: 3rem;
+
+  blockquote {
+    text-align: left;
+    font-family: $big;
+    font-size: 2.5rem;
+  }
+  p {
+    font-family: $title;
+    font-size: 2.5rem;
+    line-height: 0.5rem;
+  }
+}
+
+
+
+// Gallery CTA Section
+
+section.gallery-intro {
+  display: grid;
+  grid-template-areas:
+    "main  pic"
+    "main  pic";
+  align-content: center;
+  justify-items: center;
+  background: $dark;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 30px;
+
+  h1 {
+    grid-area: main;
+    padding: 60px;
+    font-size: 5rem;
+    font-family: $big;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: $white;
+    text-align: center;
+    z-index: 1;
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: $normal;
+    font-weight: 400;
+    color: $white;
+    z-index: 1;
+  }
+  
+.circle-1 {
+  position: relative;
+  top: 50px;
+  right: -90px;
+  grid-area: main;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 50%; /* the magic */
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto 40px;
+  z-index: 0;
+  background: $secondary;
+}
+
+.circle-2 {
+  position: relative;
+  top: 250px;
+  right: 80px;
+  grid-area: main;
+  width: 100px;
+  height: 100px;
+  line-height: 200px;
+  border-radius: 50%;
+  /* the magic */
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  z-index: 0;
+  background: $secondary;
+}
+
+
+  .gallery-btn {
+    position: relative;
+    top: 370px;
+    grid-area: main;
+    color: $dark;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 0;
+    text-align: center;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    z-index: 2;
+    text-decoration: none;
+    background: $orange;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:hover,
+    active {
+      color: $dark;
+      background: $white;
+    }
+  }
+
+  .gallery-section {
+    align-items: center;
+    justify-content: center;
+    grid-area: pic;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+
+      .photo > img {
+      display: flex;
+      height: 200px;
+      width: 230px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+
+
+
+footer {
+  display: grid;
+  background: $secondary;
+  text-align: center;
+  padding: 50px 30px 0px;
+
+  h3 {
+    margin: 0;
+    font-family: $big;
+    font-size: 3rem;
+  }
+  
+  ul > li {
+    display: inline;
+    padding: 20px;
+
+      a:link,
+      a:visited {
+        font-weight: bolder;
+        text-decoration: none;
+        color: $dark;
+        transition: color 200ms ease-in-out;
+        
+        &:hover {
+          color: $white;
+      }
+    }
+  }
+
+
+  p {
+    font-family: $usual;
+  }
+}
+
+
+
+@import 'mobile';

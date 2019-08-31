@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Kaushan+Script|Satisfy|Roboto+Condensed|Montserrat:600,900');
+
+// Colors
+
+$primary: #F2DAD7;
+$secondary: #D1A39E;
+$white: #fdfbfb;
+$dark: #1b1b1b;
+$yellow: #F2E788;
+$orange: #DA6032;
+$green: #92c892;
+$ease: all 0.3s ease-in-out;
+
+// Typography
+
+$body: 'Inconsolata', monospace;
+$big: 'Satisfy', cursive;
+$usual: 'Montserrat', monospace;
+$title: 'Kaushan Script', cursive;
+$normal: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+/* MOBILE */
+
+
+@mixin mediaSm {
+  @media screen and (max-width: 419px) {
+    @content;
+  }
+}
+
+@mixin mediaSmL {
+  @media screen and (min-width: 420px) and (max-width: 767px) { 
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (min-width: 768px) and (max-width: 1025px) { 
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 1026px) and (max-width: 1425px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 991px) {
+    @content;
+  }
+}
