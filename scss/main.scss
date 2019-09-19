@@ -176,8 +176,8 @@ section.gallery-intro {
   align-content: center;
   justify-items: center;
   background: $dark;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  padding: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(4, 1fr));
+  padding: 50px;
 
   h1 {
     grid-area: main;
@@ -212,7 +212,6 @@ section.gallery-intro {
   -webkit-border-radius: 50%;
   text-transform: uppercase;
   font-weight: 700;
-  margin: 0 auto 40px;
   z-index: 0;
   background: $secondary;
 }
@@ -268,6 +267,7 @@ section.gallery-intro {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding: 30px;
     
 
       .photo > img {

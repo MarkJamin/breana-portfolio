@@ -4,6 +4,19 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+
+    section.gallery-intro { 
+      grid-template-areas:
+      "main"
+      "pic";
+      
+        .photo > img {
+          width: 250px;
+          object-fit: cover;
+          object-position: 50%; 
+          align-items: center;
+      }
+    }
 }
 
 
@@ -36,17 +49,11 @@
     "main"
     "pic";
     
-
-    .gallery-section {
-      width: 100%;
-      padding-top: 35px;
-
       .photo > img {
         width: 250px;
         object-fit: cover;
         object-position: 50%; 
         align-items: center;
-      }
     }
   }
 
